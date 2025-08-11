@@ -2,10 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { ThemeProvider } from "@/contexts/theme-context"
-import MouseFollower from "@/components/mouse-follower"
-import UnifiedBackground from "@/components/unified-background"
-import Moving3DBackground from "@/components/moving-3d-background"
-import DoctorStrangeLoader from "@/components/doctor-strange-loader"
+import dynamic from "next/dynamic"
 import Navigation from "@/components/navigation"
 import Hero from "@/components/hero"
 import About from "@/components/about"
@@ -15,6 +12,11 @@ import Certifications from "@/components/certifications"
 import Education from "@/components/education"
 import Blog from "@/components/blog"
 import Contact from "@/components/contact"
+
+const DoctorStrangeLoader = dynamic(() => import("@/components/doctor-strange-loader"), { ssr: false })
+const Moving3DBackground = dynamic(() => import("@/components/moving-3d-background"), { ssr: false })
+const UnifiedBackground = dynamic(() => import("@/components/unified-background"), { ssr: false })
+const MouseFollower = dynamic(() => import("@/components/mouse-follower"), { ssr: false })
 
 export default function Portfolio() {
   const [loading, setLoading] = useState(true)

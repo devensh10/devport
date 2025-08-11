@@ -9,6 +9,7 @@ export default function Moving3DBackground() {
   const currentColor = colors[colorIndex]
 
   useEffect(() => {
+    if (typeof window === "undefined") return;
     const container = containerRef.current
     if (!container) return
 

@@ -9,6 +9,7 @@ export default function UnifiedBackground() {
   const currentColor = colors[colorIndex]
 
   useEffect(() => {
+    if (typeof window === "undefined") return;
     const canvas = canvasRef.current
     if (!canvas) return
 
